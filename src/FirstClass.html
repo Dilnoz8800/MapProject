@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesting Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .box {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        h1, h3 {
+            font-weight: normal;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .question-container {
+            margin-top: 10px;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: lightblue;
+        }
+
+        .leaderboard-container {
+            width: 100%;
+        }
+
+        .leaderboard-title {
+            margin-bottom: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <h1>Interesting Quiz</h1>
+        <div id="quiz-container" class="question-container"></div>
+        <button onclick="submitAnswer()" id="submit-btn">Submit</button>
+        <button onclick="showLeaderboard()" id="leaderboard-btn">Leaderboard</button>
+    </div>
+    <div class="box leaderboard-container" id="leaderboard">
+        <h3 class="leaderboard-title">Leaderboard</h3>
+        <table id="leaderboard-table">
+            <thead>
+            <tr>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        {
+            question: "Which one is NOT a programming language?",
+            options: ["Python", "Java", "Ruby", "Cucumber"],
+            correctAnswer: "Cucumber"
+        },
+        {
+            question: "How many sides does a pentagon have?",
+            options: [3, 4, 5, 6],
+            correctAnswer: "5"
+        }
+    ];
+
+    let questionIndex = 0;
+    let score = 0;
+</script>
+</body>
+</html>
